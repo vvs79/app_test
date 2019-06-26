@@ -1,0 +1,24 @@
+.content
+  .col-sm-12
+    .col-sm-4
+      = text_field_tag 'test-1', nil, placeholder: 'Enter ranges here'
+    .col-sm-2
+      %button.butt-test-1
+        GO test 1
+    .col-sm-4.result-test-1
+      %span.result
+
+  .col-sm-12
+    .col-sm-6
+      = text_field_tag 'test-2', nil, placeholder: 'Enter text here'
+    .col-sm-2
+      %button.butt-test-2
+        GO test 2
+    .col-sm-4.result-test-2
+      %p.result
+
+  .col-sm-12
+    = form_tag create_yml_path, method: :post, html: { multipart: true } do
+      = label_tag :file do
+        %span= "Upload simple.yml"
+      = file_field_tag :file

@@ -1,0 +1,30 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.content {
+  margin-top: 50px;
+  margin-left: 50px;
+
+  .col-sm-12 {
+    margin-bottom: 50px;
+
+    #test-1,
+    #test-2 {
+      width: 100%;
+    }
+
+    label[for="file"] {
+      span {
+        border: 1px solid burlywood;
+        border-radius: 5px;
+        padding: 5px 10px;
+        background: burlywood;
+        cursor: pointer;
+      }
+    }
+
+    input#file {
+      display: none;
+    }
+  }
+}
