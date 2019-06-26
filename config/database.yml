@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  encoding: utf8
+
+development:
+  <<: *default
+  database: app_test_dev
+  username: mcom
+  password: mcom
+  host: localhost
+
+test:
+  <<: *default
+  database: app_test_test
+  username: mcom
+  password: mcom
+  host: localhost
+
+production:
+  <<: *default
+  database: app_test_prod

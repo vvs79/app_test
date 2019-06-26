@@ -2,23 +2,25 @@ class ApiService
   def initialize(params)
     @text= params[:str]
     @file = params[:file]
+    @num = params[:num]
   end
 
   def set_5_letters
     arr = []
     str = text
     while str && str.length > 0 do
-      step = 5
-      if str.length < 5
+      step = num.to_i
+      if str.length < step
         arr << str
         break
-      elsif str[5] == ' '
-        arr << str[0..4]
+      elsif str[step] == ' '
+        arr << str[0..step-1]
       else
-        if str[0..4].index(' ').nil?
-          arr << str[0..4]
+        if str[0..step-1].index(' ').nil?
+          arr << str[0..step-1]
         else
-          step = str[0..4].index(' ')
+          s = str[0..step-1]
+          step = (0...s.length).find_all{ |i| s[i,1] == ' ' }.last
           arr << str[0..step]
         end
       end
@@ -54,6 +56,6 @@ class ApiService
 
   private
 
-  attr_reader :text, :file
+  attr_reader :text, :num, :file
 
 end

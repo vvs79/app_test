@@ -8,8 +8,8 @@ module Api::V1
 
     def set_5_letters
       return if params[:str].nil?
-      result = ApiService.new(str: params[:str].strip).set_5_letters.join("\n")
-      render json: {result: ApiService.new(str: params[:str].strip).set_5_letters}
+      result = ApiService.new(str: params[:str].strip, num: 5).set_5_letters.join("\n")
+      render json: {result: ApiService.new(str: params[:str].strip, num: 5).set_5_letters}
     end
   end
 end

@@ -2,12 +2,15 @@ source 'https://rubygems.org'
 
 gem 'rails', git: 'https://github.com/rails/rails', branch: '4-2-stable'
 
-gem 'mysql2'
+# gem 'mysql2'
 gem 'haml-rails'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'rb-readline'
 gem 'carrierwave'
+gem 'puma'
+gem 'webdrivers'
+gem 'pg', '0.17.1'
 
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -20,6 +23,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'selenium-webdriver'
 end
 
 group :development do

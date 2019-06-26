@@ -1,6 +1,4 @@
 jQuery ->
-  console.log 'start'
-
   if $('#test-1').length
     $(document).on 'click', '.butt-test-1', (e) ->
       e.preventDefault()
@@ -9,7 +7,6 @@ jQuery ->
         data: {str: $('#test-1').val()}
         url: "/api/v1/set_ranges"
         success: (data) ->
-          console.log 'data = ', data
           $('div.result-test-1').hide()
           if data.result
             $('div.result-test-1').show()
@@ -23,7 +20,6 @@ jQuery ->
         data: {str: $('#test-2').val()}
         url: "/api/v1/set_5_letters"
         success: (data) ->
-          console.log 'data = ', data
           $('div.result-test-2').hide()
           if data.result
             str = data.result.join('<br>')
